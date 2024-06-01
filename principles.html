@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>BIOPHY-Seeks</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            box-sizing: border-box;
+        }
+
+        body {
+            border-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            background: url("principlesBgpic.jpg") no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        .container {
+            width: 100%;
+            min-height: 100vh;
+            background: rgba(0, 0, 0, 0.7);
+            padding-left: 8%;
+            padding-right: 8%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .navBar {
+            display: flex;
+            align-items: center;
+            height: 10%;
+            margin-bottom: 20px;
+        }
+
+        .logo {
+            cursor: pointer;
+            color: #fff;
+            font-size: 40px;
+            margin-right: auto;
+            padding-top: 20px;
+        }
+
+        .logopic {
+            margin-top: 34px;
+            margin-right: 13px;
+            height: 45px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: flex-end;
+            cursor: pointer;
+            height: 100%;
+        }
+
+        nav ul li {
+            margin-left: 60px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 20px;
+            padding-top: 10px;
+            word-spacing: 10px;
+        }
+
+        nav ul li a:hover,
+        nav ul li a:active {
+            background-color: #fff;
+            color: #000;
+            border-radius: 30px;
+            padding: 10px 20px;
+            transition: background-color 0.8s, color 0.8s;
+        }
+
+        #principles-text {
+            text-align: center;
+            letter-spacing: 16px;
+            margin-top: 340px;
+            font-family: Poppins, sans-serif;
+            font-size: 180px;
+            font-weight: bold;
+            color: #fff;
+            opacity: 0;
+            transform: translateY(100px);
+            transition: opacity 1s, transform 1s;
+        }
+	
+        #principlesStart {
+            text-align: center;
+            margin-top: 20px;
+            color: #fff;
+            font-size: 30px;
+            line-height: 25px;
+            line-spacing: 30px;
+        }
+
+        #principlesItalic {
+            text-align: center;
+            margin-top: 10px;
+            color: #fff;
+            font-size: 60px;
+			font-style: italic;
+			font-weight: bold;
+            line-height: 25px;
+            line-spacing: 15px;
+        }
+		
+		#principles-text::selection {
+            text-align: center;
+            letter-spacing: 16px;
+            margin-top: 340px;
+            font-family: Poppins, sans-serif;
+            font-size: 180px;
+            font-weight: bold;
+            color: #F6A90F;
+            opacity: 0;
+            transform: translateY(100px);
+            transition: opacity 1s, transform 1s;
+        }
+	
+        #principlesStart::selection {
+            text-align: center;
+            margin-top: 20px;
+            color: #964700;
+            font-size: 22px;
+            line-height: 25px;
+            line-spacing: 15px;
+        }
+
+        #principlesItalic::selection {
+            text-align: center;
+            margin-top: 10px;
+            color: #E0771B;
+            font-size: 30px;
+            font-style: italic;
+            line-height: 25px;
+            line-spacing: 15px;
+        }
+		
+		.line p::selection{
+		color:#FF9C1B;
+		}
+		
+        @keyframes slideIn {
+            0% {
+                transform: translateY(85%);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .animate-image {
+            animation: slideIn 4s ease forwards;
+        }
+
+        .info {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            margin-top: 20px;
+        }
+		
+		.info2 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .infoContainer1,
+        .infoContainer2 {
+            border: 2px solid black;
+            background-color: #E67E00;
+            border-radius: 20px;
+            padding: 20px;
+            flex: 1;
+            margin: 10px;
+			width: 700px;
+			length: 800px;
+			cursor: pointer;
+        }
+		
+		.infoContainer3,		
+		.infoContainer4 {
+            border: 2px solid black;
+            background-color: #F1660B;
+            border-radius: 20px;
+            padding: 20px;
+            flex: 1;
+            margin: 10px;
+			width: 700px;
+			length: 800px;
+			cursor: pointer;
+        }
+		
+        #subcontent {
+            color: #fff;
+			font-size: 50px;
+			font-weight: bold;
+			letter-spacing: 4px;
+        }
+
+        #paragraph {
+            color: #fff;
+			font-size: 24px;
+			font-style: italic;
+        }
+		
+		#moreInfo {
+			color: #fff;
+			font-size: 15px;
+		}
+		
+		.infoContainer1:hover,
+        .infoContainer2:hover {
+            border: 2px solid white;
+            background-color: transparent;
+            border-radius: 20px;
+            padding: 20px;
+            flex: 1;
+            margin: 10px;
+			width: 700px;
+			length: 800px;
+			cursor: pointer;
+        }
+		
+		.infoContainer3:hover,		
+		.infoContainer4:hover {
+            border: 2px solid white;
+            background-color: transparent;
+            border-radius: 20px;
+            padding: 20px;
+            flex: 1;
+            margin: 10px;
+			width: 700px;
+			length: 800px;
+			cursor: pointer;
+        }
+		 #subcontent:hover {
+            color: #FDB10D;
+			font-size: 50px;
+			font-weight: bold;
+			letter-spacing: 4px;
+        }
+
+        #paragraph:hover{
+            color: #F45B0D;
+			font-size: 24px;
+			font-style: italic;
+        }
+		
+		#moreInfo:hover {
+			color: #FF9F3E;
+			font-size: 15px;
+		}
+		
+		.buttonType {
+			margin-left: 705px;
+            background-color: transparent;
+            color: #fff;
+            font-size: 20px;
+            border: 3px solid white;
+            border-radius: 30px;
+            padding: 10px 20px;
+			padding-right: 70px;
+			padding-left: 70px;
+            cursor: pointer;
+            transition: background-color 0.6s, color 0.6s;
+        }
+
+        .buttonType:hover {
+            background-color: white;
+            color: black;
+			transform:translateY(-10px);
+			box-shadow: 0 0 20px 0px rgba(0,0,0,0.2);
+			transition: 0.6s;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="navBar">
+            <img src="tree-line.png" alt="" class="logopic">
+            <p class="logo">BioPhys</p>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="history.html">History</a></li>
+                    <li><a href="principles.html">Principles</a></li>
+                    <li><a href="professions.html">Professions</a></li>
+                    <li><a href="signup.html">Sign-Up</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="container1">
+			<div id="principles-text">Principles</div>
+		</div>
+
+        <div class="content">
+            <p id="principlesStart"> Biophysics is a thriving scientific subject in which experts from a variety of disciplines, 
+			including Mathematics, <br> <br>  Chemistry, Physics, Engineering, Pharmacology, and materials sciences, utilize their expertise 
+			to investigate <br> <br> and develop new techniques for understanding how the biological sphere works. </p> <br> <br>
+
+            <p id="principlesItalic"> <br> Biophysics Bridges Sciences across woven connections, <br> <br> <br> through its Methodologies & Principles Approaches </p> <br>
+        </div> <br> <br> 
+		
+		<div class="line">
+			<p style= "color:#fff; border: 2px solid white; padding-left: 5px; padding-right:5px; padding-bottom:10px;"> 
+			______________________________________________________________________________________________________________________________</p>
+		</div>
+		
+        <div class="info">
+            <div class="infoContainer1">
+                <h3 id="subcontent"> QUALITATIVE ANALYSIS  </h3> 
+                <p id="paragraph"> Biophysics uses quantitative tools to investigate biological processes.  </p>
+				<p id= "moreInfo"> Measurements, data analysis, and mathematical modeling are used to gain a fundamental understanding of biological processes. 
+				Itthrives on the amalgamation of principles from physics and biology, recognizing that biological systems exhibit physical properties 
+				and behaviors that can be understood using the tools and concepts of physics.</p>
+            </div>
+
+            <img src="atom.png" alt="Animated Image" id="animated-image">
+
+            <div class="infoContainer2">
+                <h3 id="subcontent"> DATA ANALYSIS AND STRUCTURE </h3> 
+                <p id="paragraph"> The structure of DNA was determined in 1953 using biophysics. </p>
+				<p id= "moreInfo"> This discovery was essential in demonstrating how DNA functions as a blueprint for life. Due to this, we can now decode DNA 
+				sequences from thousands of humans as well as other living species. Biophysical approaches are also required for the analysis of 
+				these massive amounts of data. </p>
+            </div>
+        </div>
+		
+		<div class="info2">
+			 <div class="infoContainer3">
+                <h3 id="subcontent"> ECOSYSTEMS </h3> 
+                <p id="paragraph"> Environmental biophysics assesses and models all parts of the environment. </p>
+				<p id= "moreInfo"> Environmental biophysicists study the varied microbial populations that inhabit every niche on the globe, monitor pollution 
+				in the atmosphere, and are developing methods to convert algae into biofuels. </p>
+            </div>
+			
+			  <div class="infoContainer4">
+                <h3 id="subcontent"> MOLECULES IN ACTION </h3> 
+                <p id="paragraph"> Biophysicists investigate how hormones flow throughout the cell.</p>
+				<p id= "moreInfo"> Additionally, on how these cells seem to also communicate with each other. Biophysicists have used fluorescent 
+				tags to make cells flash like fireflies under a microscope, revealing information about the cell's complex internal transit system. </p>
+            </div>
+		</div>
+		<br> <br>
+			<a href="professions.html"><button type="button" class="buttonType" id="buttonType"> Professions in Biophysics</button></a>
+		<br> <br>
+		<br> 
+    </div>
+	<br> <br>
+	<script> 
+	
+	window.onload = function() {
+		const principlesText = document.getElementById('principles-text');
+
+    
+		setTimeout(function() {
+			principlesText.style.opacity = '1'; 
+			principlesText.style.transform = 'translateY(0)'; 
+		}, 500); 
+	};
+	
+	const image = document.getElementById('animated-image');
+	image.classList.add('animate-image');
+
+	</script>
+</body>
+
+</html>

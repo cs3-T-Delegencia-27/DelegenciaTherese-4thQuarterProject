@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>BIOPHY-Seeks</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            box-sizing: border-box;
+        }
+
+        body {
+            border-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            background: url("bgpicture.jpg") no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        .container {
+            width: 100%;
+            min-height: 100vh;
+            background: rgba(0, 0, 0, 0.7);
+            padding-left: 8%;
+            padding-right: 8%;
+        }
+
+        .navBar {
+            display: flex;
+            align-items: center;
+            height: 30%;
+        }
+
+        .logo {
+            cursor: pointer;
+            color: #fff;
+            font-size: 40px;
+            margin-right: auto;
+            padding-top: 20px;
+        }
+
+        .logopic {
+            margin-top: 34px;
+            margin-right: 13px;
+            height: 45px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            height: 100%;
+        }
+
+        nav ul li {
+            margin-left: 60px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 20px;
+            padding-top: 10px;
+            word-spacing: 10px;
+        }
+
+        nav ul li a:hover,
+        nav ul li a:active {
+            background-color: #fff;
+            color: #000;
+            border-radius: 30px;
+            padding: 10px 20px;
+            transition: background-color 0.8s, color 0.8s;
+        }
+
+        .row {
+            height: 90vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        h1 {
+            color: #fff;
+            font-size: 190px;
+			font-weight: bold;
+            margin-bottom: 2px;
+            letter-spacing: 10px;
+        }
+
+        h4 {
+            color: #fff;
+            font-size: 45px;
+            margin-top: 5px;
+        }
+
+        .context {
+            text-align: justify;
+            margin-top: 30px;
+            color: #fff;
+            font-size: 25px;
+            line-height: 25px;
+        }
+		
+		h1::selection {
+            color: black;
+            margin-bottom: 5px;
+            letter-spacing: 10px;
+        }
+		
+		h4::selection {
+            color: #5F98AB;
+            margin-bottom: 5px;
+            letter-spacing: 10px;
+        }
+		
+		.context::selection {
+            color: #8A9DA4;
+            margin-bottom: 5px;
+            letter-spacing: 10px;
+        }
+
+        p {
+            color: #fff;
+            font-size: 18px;
+            line-height: 25px;
+            margin-top: 20px;
+        }
+
+        .buttonType {
+            background-color: transparent;
+            color: #fff;
+            font-size: 20px;
+            border: 3px solid white;
+            border-radius: 30px;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background-color 0.6s, color 0.6s;
+        }
+
+        .buttonType:hover {
+            background-color: white;
+            color: black;
+			transform:translateY(-15px);
+			box-shadow: 0 0 20px 0px rgba(0,0,0,0.2);
+			transition: 0.6s;
+        }
+	
+		
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="navBar">
+            <img src="tree-line.png" alt="" class="logopic">
+            <p class="logo">BioPhys</p>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="history.html">History</a></li>
+					 <li><a href="principles.html">Principles</a></li>
+                    <li><a href="professions.html">Professions</a></li>
+                    <li><a href="signup.html">Sign-Up</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <div id="animatedText">
+                    <h1>BIOPHY-Seeks</h1>
+                </div>
+                <h4>A Collective Review on the Innate Relationship Between Biology & Physics</h4>
+                <p class="context">Biophysics is a radical field of study that seeks to understand the biological sphere through the mechanisms of Physics. 
+				Applying interrelated theories and methodologies to understand how our world functions and how every biomolecular aspect contributes to the 
+				understanding of the natural world, it is of the essence to comprehending and realizing its relevance. Hence, highlighting the role of biophysicists 
+				who specialize in the quantitative sciences of Physics, Mathematics, Chemistry, and other relevant disciplines of studies.</p>
+                <br><br>
+                <a href="history.html"><button type="button" class="buttonType" id="buttonType">Explore More!</button></a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>BIOPHY-Seeks</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            box-sizing: border-box;
+        }
+
+        body {
+            border-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            background: url("professionsBg.jpg") no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        .container {
+            width: 100%;
+            min-height: 100vh;
+            background: rgba(0, 0, 0, 0.7);
+            padding-left: 8%;
+            padding-right: 8%;
+        }
+
+        .navBar {
+            display: flex;
+            align-items: center;
+            height: 30%;
+        }
+
+        .logo {
+            cursor: pointer;
+            color: #fff;
+            font-size: 40px;
+            margin-right: auto;
+            padding-top: 20px;
+        }
+
+        .logopic {
+            margin-top: 34px;
+            margin-right: 13px;
+            height: 45px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            height: 100%;
+        }
+
+        nav ul li {
+            margin-left: 60px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 20px;
+            padding-top: 10px;
+            word-spacing: 10px;
+        }
+
+        nav ul li a:hover,
+        nav ul li a:active {
+            background-color: #fff;
+            color: #000;
+            border-radius: 30px;
+            padding: 10px 20px;
+            transition: background-color 0.8s, color 0.8s;
+        }
+
+        .row {
+            height: 90vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        h1 {
+            color: #fff;
+            font-size: 190px;
+			font-weight: bold;
+            margin-bottom: 2px;
+            letter-spacing: 10px;
+        }
+
+        h4 {
+            color: #fff;
+            font-size: 45px;
+            margin-top: 5px;
+        }
+
+        .context {
+            text-align: justify;
+            margin-top: 30px;
+            color: #fff;
+            font-size: 22px;
+            line-height: 25px;
+        }
+		
+		h1::selection {
+            color: black;
+            font-size: 170px;
+            margin-bottom: 5px;
+            letter-spacing: 10px;
+        }
+		
+		h4::selection {
+            color: #5F98AB;
+            font-size: 170px;
+            margin-bottom: 5px;
+            letter-spacing: 10px;
+        }
+		
+		.context::selection {
+            color: #8A9DA4;
+            font-size: 170px;
+            margin-bottom: 5px;
+            letter-spacing: 10px;
+        }
+
+        p {
+            color: #fff;
+            font-size: 18px;
+            line-height: 25px;
+            margin-top: 20px;
+        }
+
+        .buttonType {
+            background-color: transparent;
+            color: #fff;
+            font-size: 20px;
+            border: 3px solid white;
+            border-radius: 30px;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background-color 0.6s, color 0.6s;
+        }
+
+        .buttonType:hover {
+            background-color: white;
+            color: black;
+			transform:translateY(-15px);
+			box-shadow: 0 0 20px 0px rgba(0,0,0,0.2);
+			transition: 0.6s;
+        }
+	
+		#professions {
+			text-align: center;
+			letter-spacing: 16px;
+			margin-top: 340px;
+            font-family: Poppins, sans-serif;
+            font-size: 180px;
+            font-weight: bold;
+            color: #fff;
+            opacity: 0;
+            transform: scale(0.5);
+            transition: opacity 1s, transform 1s;
+        }
+		
+		#profsStart {
+            text-align: center;
+            margin-top: 20px;
+            color: #fff;
+            font-size: 30px;
+            line-height: 25px;
+            line-spacing: 30px;
+        }
+
+        #profsItalic {
+            text-align: center;
+            margin-top: 10px;
+            color: #fff;
+            font-size: 60px;
+            font-style: italic;
+			font-weight: bold;
+            line-height: 25px;
+            line-spacing: 15px;
+        }
+		
+		#professions::selection {
+            color: #0C9FD2;
+        }
+		
+		#profsStart::selection {
+            color: #778138;
+        }
+
+        #profsItalic::selection {
+            color: #5EBAE1;
+        }
+		
+		article {
+		--img-scale: 1.001;
+		--title-color: black;
+		--link-icon-translate: -20px;
+		--link-icon-opacity: 0;
+		position: relative;
+		border-radius: 20px;
+		box-shadow: none;
+		background: #23A7D7;
+		transform-origin: center;
+		transition: all 0.4s ease-in-out;
+		overflow: hidden;
+		}
+		
+		article a::after {
+		position: absolute;
+		inset-block: 0;
+		inset-inline: 0;
+		cursor: pointer;
+		content: "";
+		}
+		
+		article h2 {
+		text-align:left;
+		margin: 10px 0 15px 0;
+		font-family: "Poppins", sans-serif;
+		font-size: 1.5rem;
+		letter-spacing: 0.06em;
+		color: var(--title-color);
+		transition: color 0.4s ease-out;
+		}
+		
+		figure {
+		margin: 0;
+		padding: 0;
+		aspect-ratio: 17 / 9;
+		overflow: hidden;
+		}
+		
+		article img {
+		max-width: 100%;
+		transform-origin: center;
+		transform: scale(var(--img-scale));
+		transition: transform 0.5s ease-in-out;
+		}
+
+		.article-body {
+		padding: 24px;
+		}
+
+		article a {
+		display: inline-flex;
+		align-items: center;
+		text-decoration: none;
+		color: #fff;
+		}
+
+		article a:focus {
+		outline: 1px dotted #28666e;
+		}
+
+		article:has(:hover, :focus) {
+		--img-scale: 1.1;
+		--title-color: #C6C865;
+		--link-icon-translate: 0;
+		--link-icon-opacity: 1;
+		box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+		}
+		*,
+		*::before,
+		*::after {
+		box-sizing: border-box;
+		}
+		
+		.articles{
+		display: grid;
+		max-width: 90%;
+		margin-inline: auto;
+		padding-inline: 30px;
+		grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+		gap: 24px;
+		}
+		
+		
+		@media screen and (max-width: 960px) {
+			article {
+				container: card/inline-size;
+			}
+		
+			.article-body p {
+				display: none;
+			}
+		}
+		
+		@container card (min-width: 180px) {
+			.article-wrapper {
+			display: grid;
+			grid-template-columns: 100px 1fr;
+			gap: 16px;
+			}
+			
+			.article-body {
+			padding-left: 0;
+			}
+			figure {
+			width: 100%;
+			height: 100%;
+			overflow: hidden;
+			}
+			figure img {
+			height: 100%;
+			aspect-ratio: 1;
+			object-fit: cover;
+			}
+		}
+		
+		#subtitle {
+		color: #fff;
+		}
+		
+		#paragraph {
+		font-size: 25px;
+		color: #fff;
+		}
+		
+		#subtitle:hover {
+		color: #D1DCEE;
+		cursor: pointer;
+		}
+		
+		#paragraph:hover {
+		color: #B4BF5F;
+		cursor: pointer;
+		}
+		
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="navBar">
+            <img src="tree-line.png" alt="" class="logopic">
+            <p class="logo">BioPhys</p>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="history.html">History</a></li>
+					<li><a href="principles.html">Principles</a></li>
+                    <li><a href="professions.html">Professions</a></li>
+                    <li><a href="signup.html">Sign-Up</a></li>
+                </ul>
+            </nav>
+		</div>
+		
+        <div id="professions">Professions</div>
+		
+		<div class="content">
+            <p id="profsStart"> A biophysics degree prepares you for a wide range of career opportunities. Biophysics 
+			graduates have virtually <br> <br> limitless job opportunities. Here are some career options for the said discipline of study: </p>
+			<br> <br>
+            <p id="profsItalic"> <br> List of Biophysics Career Options </p> <br> 
+        </div> 
+		
+		<br> <br>
+		
+			<section class="articles">
+			
+		
+			<article>
+				<div class="article-wrapper">
+					<figure>
+						<img src="labtech.jpg" alt="" />
+					</figure>
+				<div class="article-body">
+					<h2 id ="title">Laboratory Technician</h2>
+						<p id= "paragraph"> Laboratory workers carry out a variety of tasks in a laboratory. They also maintain laboratory equipment, support lead scientists with their responsibilities, 
+						collect and analyze samples or substances, record observations, and plan laboratory tests in accordance with established testing procedures.</p>
+					<br> <br>
+				</div>
+			</div>
+		</article>
+		
+		<article>
+				<div class="article-wrapper">
+					<figure>
+						<img src="radiology.jpg" alt="" />
+					</figure>
+				<div class="article-body">
+					<h2 id ="title">Radiologist</h2>
+						<p id= "paragraph"> Radiologists use medical imaging technologies such as x-rays and ultrasounds to diagnose and treat a wide range of injuries and illnesses. They also assess a patient's medical 
+						history, interpret test results, collaborate with other medical professionals, and create extensive reports on their findings.</p>
+					<br> <br>
+				</div>
+			</div>
+		</article>
+		
+		<article>
+				<div class="article-wrapper">
+					<figure>
+						<img src="researchassoc.jpg" alt="" />
+					</figure>
+				<div class="article-body">
+					<h2 id ="title">Research Associate</h2>
+						<p id= "paragraph"> Research associates track the progress of research initiatives and conduct various tests and studies. They also carry out sophisticated experiments, collect, prepare, and analyze 
+						specimens, as well as conduct research and analysis under the supervision of a senior researcher.</p>
+					<br> <br>
+				</div>
+			</div>
+		</article>
+		
+		<article>
+				<div class="article-wrapper">
+					<figure>
+						<img src="microbio.jpg" alt="" />
+					</figure>
+				<div class="article-body">
+					<h2 id ="title">Microbiologist</h2>
+						<p id= "paragraph"> Microbiologists study minute creatures like bacteria and algae. They identify these organisms and track their growth to better understand their properties and how to treat 
+						a wide range of infectious disorders.</p>
+					<br> <br>
+				</div>
+			</div>
+		</article>
+		
+		
+		<article>
+				<div class="article-wrapper">
+					<figure>
+						<img src="environmental.jpg" alt="" />
+					</figure>
+				<div class="article-body">
+					<h2 id ="title">Environmental Scientist</h2>
+						<p id= "paragraph"> Environmental scientists recognize both environmental and human-related risks. They collect environmental data for scientific study, analyze samples and surveys to identify environmental 
+						dangers, and devise strategies to help prevent or control environmental problems.</p>
+					<br> <br>
+				</div>
+			</div>
+		</article>
+		
+		<article>
+				<div class="article-wrapper">
+					<figure>
+						<img src="ecology.jpg" alt="" />
+					</figure>
+				<div class="article-body">
+						<h2 id ="title">Ecologist</h2>
+						<p id= "paragraph"> Ecologists investigate the interactions of living species, such as humans, with their environment. They examine environmental sites, collect specimens, monitor erosion control, 
+						analyze data using statistical models, and conduct field, laboratory, and theoretical research.</p>
+					<br> <br>
+				</div>
+			</div>
+		</article>
+		
+		<article>
+				<div class="article-wrapper">
+					<figure>
+						<img src="chem.jpg" alt="" />
+					</figure>
+				<div class="article-body">
+					<h2 id ="title">Chemist</h2>
+						<p id= "paragraph"> Chemists investigate the qualities and composition of stuff. They conduct experiments with lab equipment, test solutions, analyze substances, do quality control tests, and 
+						assess and report test results. Chemists also decide how to improve procedures and equipment.
+				</div>
+			</div>
+		</article>
+		
+		<article>
+				<div class="article-wrapper">
+					<figure>
+						<img src="pharmacology.jpg" alt="" />
+					</figure>
+				<div class="article-body">
+					<h2 id ="title">Pharmacologist</h2>
+						<p id= "paragraph"> Pharmacologists create new pharmaceuticals through adequate study and testing. They discover potential adverse effects of these medications, assess the safety and efficacy of newly 
+						produced drugs, interpret data, make suggestions based on their findings, and supervise employees.</p>
+					<br> <br>
+				</div>
+			</div>
+		</article>
+		
+		<br> <br> 
+		 </div>
+	 
+    <script>
+        window.onload = function() {
+            const professions = document.getElementById('professions');
+
+            setTimeout(function() {
+                professions.style.opacity = '1';
+                professions.style.transform = 'scale(1)';
+            }, 500);
+        };
+		
+    </script>
+    </div>
+</body>
+
+</html>

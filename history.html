@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>BIOPHY-Seeks</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            box-sizing: border-box;
+        }
+
+        body {
+            border-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            background: url("historybg.jpg") no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        .container {
+            width: 100%;
+            min-height: 100vh;
+            background: rgba(0, 0, 0, 0.7);
+            padding-left: 8%;
+            padding-right: 8%;
+        }
+
+        .navBar {
+            display: flex;
+            align-items: center;
+            height: 30%;
+        }
+
+        .logo {
+            cursor: pointer;
+            color: #fff;
+            font-size: 40px;
+            margin-right: auto;
+            padding-top: 20px;
+        }
+
+        .logopic {
+            margin-top: 34px;
+            margin-right: 13px;
+            height: 45px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            height: 100%;
+        }
+
+        nav ul li {
+            margin-left: 60px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 20px;
+            padding-top: 10px;
+            word-spacing: 10px; 
+        }
+
+        nav ul li a:hover,
+        nav ul li a:active {
+            background-color: #fff;
+            color: #000;
+            border-radius: 30px;
+            padding: 10px 20px;
+            transition: background-color 0.8s, color 0.8s;
+        }	
+		
+		.typewriter {
+			text-align: center;
+			letter-spacing: 16px;
+			float: center;
+			color: #fff;
+			font-size: 180px;
+			font-weight: bold;
+			margin-top: 340px;
+		}
+
+		#history-typewriter {
+			border-right: 2px solid;
+			animation: blink-caret 0.25s infinite;
+		}
+
+		@keyframes blink-caret {
+			from, to {
+				border-color: transparent;
+			}
+			50% {
+				border-color: #fff;
+			}
+		}
+		
+		#historyStart {
+			text-align: center;		
+            margin-top: 30px;
+            color: #fff;
+            font-size: 30px;
+            line-height: 25px;
+			line-spacing: 30px;
+		}
+		
+		#historyItalic {
+			text-align: center;
+            margin-top: 30px;
+            color: #fff;
+            font-size: 60px;
+			font-style: italic;
+			font-weight: bold;
+            line-height: 25px;
+			line-spacing: 15px;
+		}
+		
+		#history-typewriter::selection {
+			border-right: 2px solid;
+			animation: blink-caret 0.25s infinite;
+			color: #BF9B51;
+		}
+		
+		#historyStart::selection {
+			text-align: center;		
+            margin-top: 30px;
+			margin-left: 30px;
+            color: #EAD86A;
+            font-size: 22px;
+            line-height: 25px;
+			line-spacing: 15px;
+		}
+		
+		#historyItalic::selection {
+			text-align: center;
+            margin-top: 30px;
+            color: #84871E;
+            font-size: 30px;
+			font-style: italic;
+            line-height: 25px;
+			line-spacing: 15px;
+		}
+		
+		article {
+		--img-scale: 1.001;
+		--title-color: black;
+		--link-icon-translate: -20px;
+		--link-icon-opacity: 0;
+		position: relative;
+		border-radius: 5px;
+		box-shadow: none;
+		background: #305100;
+		transform-origin: center;
+		transition: all 0.4s ease-in-out;
+		overflow: hidden;
+		}
+		
+		article a::after {
+		position: absolute;
+		inset-block: 0;
+		inset-inline: 0;
+		cursor: pointer;
+		content: "";
+		}
+		
+		article h2 {
+		text-align:left;
+		margin: 10px 0 15px 0;
+		font-family: "Poppins", sans-serif;
+		font-size: 1.5rem;
+		letter-spacing: 0.06em;
+		color: var(--title-color);
+		transition: color 0.4s ease-out;
+		}
+		
+		figure {
+		margin: 0;
+		padding: 0;
+		aspect-ratio: 17 / 9;
+		overflow: hidden;
+		}
+		
+		article img {
+		max-width: 100%;
+		transform-origin: center;
+		transform: scale(var(--img-scale));
+		transition: transform 0.5s ease-in-out;
+		}
+
+		.article-body {
+		padding: 24px;
+		}
+
+		article a {
+		display: inline-flex;
+		align-items: center;
+		text-decoration: none;
+		color: #fff;
+		}
+
+		article a:focus {
+		outline: 1px dotted #28666e;
+		}
+
+		article:has(:hover, :focus) {
+		--img-scale: 1.1;
+		--title-color: #C6C865;
+		--link-icon-translate: 0;
+		--link-icon-opacity: 1;
+		box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+		}
+		*,
+		*::before,
+		*::after {
+		box-sizing: border-box;
+		}
+		
+		.articles {
+		display: grid;
+		max-width: 90%;
+		margin-inline: auto;
+		padding-inline: 30px;
+		grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+		gap: 24px;
+		}
+		
+		@media screen and (max-width: 960px) {
+			article {
+				container: card/inline-size;
+			}
+		
+			.article-body p {
+				display: none;
+			}
+		}
+		
+		@container card (min-width: 180px) {
+			.article-wrapper {
+			display: grid;
+			grid-template-columns: 100px 1fr;
+			gap: 16px;
+			}
+			
+			.article-body {
+			padding-left: 0;
+			}
+			figure {
+			width: 100%;
+			height: 100%;
+			overflow: hidden;
+			}
+			figure img {
+			height: 100%;
+			aspect-ratio: 1;
+			object-fit: cover;
+			}
+		}
+		
+		#subtitle {
+		color: #fff;
+		}
+		
+		#paragraph {
+		color: #fff;
+		}
+
+		.article-body p::selection {
+		color: #BF9B51;;
+		}
+		
+	
+		
+		.buttonType {
+			margin-left: 60px;
+            background-color: transparent;
+            color: #fff;
+            font-size: 20px;
+            border: 3px solid white;
+            border-radius: 30px;
+            padding: 10px 20px;
+			padding-right: 30px;
+			padding-left: 30px;
+            cursor: pointer;
+            transition: background-color 0.6s, color 0.6s;
+        }
+
+        .buttonType:hover {
+            background-color: white;
+            color: black;
+			transform:translateY(-10px);
+			box-shadow: 0 0 20px 0px rgba(0,0,0,0.2);
+			transition: 0.6s;
+        }
+
+
+
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="navBar">
+            <img src="tree-line.png" alt="" class="logopic">
+            <p class="logo">BioPhys</p>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="history.html">History</a></li>
+					 <li><a href="principles.html">Principles</a></li>
+                    <li><a href="professions.html">Professions</a></li>
+                    <li><a href="signup.html">Sign-Up</a></li>
+                </ul>
+            </nav>
+        </div>
+		
+		<div class= "titlecap">
+			<div class="typewriter">
+				<span id="history-typewriter"></span>
+			</div>
+		</div>
+		<div class="content">
+			<p id="historyStart"> Biophysics is an interdisciplinary science branch dedicated to investigating biological processes using the <br> <br>
+			approaches of physics. Biophysics research has aided in illness prevention and treatment, medicine discovery, and <br> <br> the creation of
+			technology that will allow humanity to live more sustainably while also protecting the changing <br> <br> environment. </p>
+			 
+			 <p id="historyItalic"> <br> <br> Biophysics is a Bridge in Various Sciences </p> <br> <br>
+		</div>
+		
+		<section class="articles">
+			
+		
+			<article>
+				<div class="article-wrapper">
+					<figure>
+						<img src="historyPic1.jpg" alt="" />
+					</figure>
+				<div class="article-body">
+					<h2 id ="title">The Father of Biophysics</h2>
+					<b id="subtitle"> His Contributions & Tenets</b> <br>
+						<p id= "paragraph"> - Kenneth Cole, ph.d. is regarded as the father of biophysics. He was the world's foremost expert on the biophysics of the nervous system. 
+						His research into nerve impulse transmission, particularly electrical resistance in squid nerve cells, is credited with paving the way for significant developments 
+						in neurophysiology in the 1930s and 1940s. </p>
+					<br> <br>
+						<p id= "paragraph"> - Dr. Cole developed the unique voltage clamping technique, which helped pave the way for Alan L. Hodgkin and Andrew F. Huxley's formulation of the "sodium 
+						theory," for which they received the Nobel Prize in 1947. He was elected to the National Academy of Sciences in 1956 and was awarded the National Medal of Science in 1967.</p>
+					<br> <br>
+					</p>
+				</div>
+			</div>
+		</article>
+		
+		<article>
+				<div class="article-wrapper">
+					<figure>
+						<img src="historyPic.jpg" alt="" />
+					</figure>
+				<div class="article-body">
+					<h2 id ="title">Biophysics in DNA & Genetic Sequencing</h2>
+					<b id="subtitle"> Its Foundations </b> <br>
+						<p id= "paragraph"> - Working at the intersection of two dissimilar sciences - physics and biology - can be challenging. Physicists must thoroughly immerse themselves in the complicated, 
+						even messy, realm of biology. Although DNA sequencing has provided us with the whole library of the human genome, the majority of the books are written in a language we do not understand.</p>
+					<br> <br>
+						<p id= "paragraph"> - That's because only 2% of all human DNA codes for proteins, with the remaining 98% serving a murkier or no purpose at all. Without this insight, the functional nature of DNA 
+						remains unknown. However, by applying theoretical physics concepts, researchers are beginning to establish a comprehensive understanding of how genes are regulated. </p>
+					<br> <br>
+					</p>
+				</div>
+			</div>
+		</article>
+		
+		<article>
+				<div class="article-wrapper">
+					<figure>
+						<img src="historyPic2.jpg" alt="" />
+					</figure>
+				<div class="article-body">
+					<h2 id ="title">Beginnings in Founding Biophysics</h2>
+					<b id="subtitle"> The Masterminds & Their Works </b> <br>
+						<p id= "paragraph"> - Biophysics is a very recent discipline of science, emerging as a distinct subfield in the early to mid-twentieth century. However, the groundwork for the study 
+						of biophysics was built much earlier, in the nineteenth century, by a group of physiologists in Berlin.</p>
+					<br> <br>
+						<p id= "paragraph"> - Hermann von Helmholtz, Emil DuBois-Reymond, Ernst von Brücke, and Carl Ludwig were among the physiologists who studied in Berlin. In 1856, Adolf Fick, one of 
+						Ludwig's students, wrote the first biophysics textbook. However, physics technology had not yet evolved enough to examine lifeforms in great detail, such as at the molecular level.
+						</p>
+					<br> <br>
+					</p>
+				</div>
+			</div>
+		</article>
+		
+		<article>
+				<div class="article-wrapper">
+					<figure>
+						<img src="historyPic4.jpg" alt="" />
+					</figure>
+				<div class="article-body">
+					<h2 id ="title">Biophysical Innovations in Radiology</h2>
+					<b id="subtitle"> Its Methods & Workings</b> <br>
+						<p id= "paragraph"> - Since its inception, biophysicists have created advanced diagnostic imaging techniques such as MRIs, CT scans, and PET scans. </p>
+					<br> <br>
+						<p id= "paragraph"> - Biophysics remains critical to the development of even safer, faster, and more precise technology to improve medical imaging and 
+						teach us more about the body's inner workings, as demonstrated by the establishment of biophysical imaging and its techniques, which range from advanced 
+						fluorescence strategies to scattering and multi-photon imaging. </p>
+					<br> <br> 
+					</p>
+				</div>
+			</div>
+		</article>
+		<br> <br> <br>
+		
+			<a href="principles.html"><button type="button" class="buttonType" id="buttonType">Principles of BioPhysics</button></a>
+			<a href="professions.html"><button type="button" class="buttonType" id="buttonType">Professions in the Field</button></a>
+		<br> <br>
+		<br> 
+    </div>
+	
+	<script>
+		function typeWriterEffect(textElement, text, speed) {
+			let i = 0;
+			function type() {
+				if (i < text.length) {
+					textElement.textContent += text.charAt(i);
+						i++;
+						setTimeout(type, speed); 
+					}
+				}
+			type();
+		}
+
+		const historyElement = document.getElementById('history-typewriter');
+
+
+		typeWriterEffect(historyElement, 'History', 100); 
+	</script>
+</body>
+</html>
